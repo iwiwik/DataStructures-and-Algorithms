@@ -5,9 +5,6 @@
 
 using namespace std;
 
-
-typedef int bst_comparison(const void *bst_a ,const void *bst_b);
-
 template<typename T>
 struct bst_node{
     T value;
