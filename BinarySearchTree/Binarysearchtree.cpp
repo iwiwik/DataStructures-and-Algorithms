@@ -1,14 +1,10 @@
 
 #include<vector>
-#include <cassert>
 
 #include "Binarysearchtree.h"
 
 template<typename T>
-bst<T>::bst(){
-    tree = nullptr;
-    count = 0;
-}
+bst<T>::bst():tree(nullptr),count(0){}
 
 template<typename T>
 bst<T>::~bst(){
