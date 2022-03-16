@@ -5,6 +5,9 @@
 
 using namespace std;
 
+
+typedef int bst_comparison(const void *bst_a ,const void *bst_b);
+
 template<typename T>
 struct bst_node{
     T value;
@@ -25,8 +28,8 @@ public:
 
     void insert(T);
 
-    T min() const;  //返回最小data
-    T  max() const; //返回最大data
+    T bst_min() const;  //返回最小data
+    T  bst_max() const; //返回最大data
 
     T bst_find(const T itemt); //查找itemt,成功返回值，失败返回nullptr
 
@@ -34,11 +37,11 @@ public:
 
     bool bst_delete(const T item); //删除item,成功true,失败false
 
-    void clear();                    //销毁搜索树
+    void bst_clear();                    //销毁搜索树
 
     void print();                      //前序遍历
 
-    int size();                         //data的数量
+    int bst_size();                         //data的数量
 
 
 private:
