@@ -1,14 +1,18 @@
 
 #include<vector>
+#include <cassert>
 
 #include "Binarysearchtree.h"
 
 template<typename T>
-bst<T>::bst():tree(nullptr),count(0){}
+bst<T>::bst(){
+    tree = nullptr;
+    count = 0;
+}
 
 template<typename T>
 bst<T>::~bst(){
-    clear();
+    bst_clear();
 }
 
 template<typename T>
@@ -62,13 +66,13 @@ bst_node<T>* bst<T>::maxmum(bst_node<T> *x){
 }
 
 template<typename T>
-T bst<T>::max() const{
+T bst<T>::bst_max() const{
     bst_node<T> *node =  maxmum(tree);
     return node->value;
 }
 
 template<typename T>
-T bst<T>::min()const{
+T bst<T>::bst_min()const{
     bst_node<T> *node = minmum(tree);
     return node->value;
 }
@@ -163,7 +167,7 @@ void bst<T>::clear(bst_node<T> *ptr){
 }
 
 template<typename T>
-void bst<T>::clear(){
+void bst<T>::bst_clear(){
     clear(tree);
     tree = nullptr;
     count = 0;
@@ -186,7 +190,7 @@ void bst<T>::print(){
 }
 
 template<typename T>
-int bst<T>::size(){
+int bst<T>::bst_size(){
     return count;
 }
 
@@ -200,16 +204,16 @@ int main(){
     }
     s1.bst_delete(per[0]);
     s1.bst_delete(per[2]);
-     cout << "size:" <<s1.size() << endl;; 
+     cout << "size:" <<s1.bst_size() << endl;; 
 
      s1.bst_delete(per[7]);
-     cout << "size:" <<s1.size() << endl; 
+     cout << "size:" <<s1.bst_size() << endl; 
      cout <<"find:" << s1.bst_find(20) << endl;
 
     cout << "前序遍历" << endl;
     s1.print();
-    s1.clear();
-    cout << "size:" <<s1.size() << endl; 
+    s1.bst_clear();
+    cout << "size:" <<s1.bst_size() << endl; 
 
 }
 
