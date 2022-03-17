@@ -23,22 +23,22 @@ public:
 
     ~bst();
 
-    void insert(T);
+    void insert(T);  //插入元素
 
-    T bst_min() const;  //返回最小data
-    T  bst_max() const; //返回最大data
+    T bst_min() const;  //返回最小元素
+    T  bst_max() const; //返回最大元素
 
-    T bst_find(const T itemt); //查找itemt,成功返回值，失败返回nullptr
+    T bst_find(const T itemt); //查找itemt元素并返回
 
-    int bst_comparison_fun(const T ,const T); //对比data函数
+    int bst_comparison_fun(const T ,const T); //元素对比
 
-    bool bst_delete(const T item); //删除item,成功true,失败false
+    bool bst_delete(const T item); //删除item元素
 
     void bst_clear();                    //销毁搜索树
 
     void print();                      //前序遍历
 
-    int bst_size();                         //data的数量
+    int bst_size();                         //当前树元素的数量
 
 
 private:
